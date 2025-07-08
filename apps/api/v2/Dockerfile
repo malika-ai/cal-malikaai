@@ -15,12 +15,12 @@ ENV DATABASE_URL=${DATABASE_URL}
 
 COPY . .
 
-RUN yarn install
+RUN yarn install --silent
 
 # Build prisma schema and make sure that it is linked to v2 node_modules
 RUN yarn workspace @calcom/api-v2 run generate-schemas
 RUN rm -rf apps/api/v2/node_modules
-RUN yarn install
+RUN yarn install --silent
 
 RUN yarn workspace @calcom/api-v2 run build
 

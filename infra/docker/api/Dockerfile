@@ -35,7 +35,7 @@ RUN set -eux; \
     yarn config set httpTimeout 1200000 && \
     npx turbo prune --scope=@calcom/web --docker && \
     npx turbo prune --scope=@calcom/api --docker && \
-    yarn install && \
+    yarn install --silent && \
     yarn turbo run build --filter=@calcom/api
 
 

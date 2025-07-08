@@ -36,6 +36,6 @@ jobs:
         run: |
           export NODE_OPTIONS="--max_old_space_size=8192"
           rm -rf packages/platform/atoms/node_modules
-          yarn install
+          yarn install --silent
           yarn workspace @calcom/atoms run build
         shell: bash
